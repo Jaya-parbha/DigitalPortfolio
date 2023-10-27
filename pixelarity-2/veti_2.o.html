@@ -1,0 +1,661 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>2.0</title>
+	<style type="text/css">
+		body{
+			margin:0px;
+		}
+		@font-face{
+			font-family:"dj";
+			src:url("fonts/S6u9w4BMUTPHh6UVSwiPGQ.woff2");
+		}
+		@font-face{
+			font-family:"d";
+			src:url("fonts/S6u9w4BMUTPHh7USSwiPGQ.woff2");
+		}
+		@font-face{
+			font-family:"j";
+			src:url("fonts/S6uyw4BMUTPHjx4wXg.woff2");
+		}
+		.d1{
+			height:3000px;
+			width:100%;
+			/*border:solid black 2px; */
+		}
+		.d2{
+			height:600px;
+			width:100%;
+			/*border:solid red 2px;*/
+		}
+		.video{
+			height:600px;
+			width:100%;
+			object-fit:cover;
+			position:absolute;
+			display:flex;
+			display-direction:column;
+		}
+		.d2child{
+			height:600px;
+			width:100%;
+			/*border:solid red 2px;*/
+			position:relative;
+		}
+		.d2ch1{
+			height:67px;
+			width:100%;
+			/*border:solid black 2px;*/
+		}
+		.d2ch2{
+			height:221px;
+			width:100%;
+			/*border:solid black 2px;*/
+		}
+		.d2ch3{
+			height:286px;
+			width:100%;
+			/*border:solid black 2px;*/
+			background-image:linear-gradient(rgba(255,255,255,0.8),rgba(255,255,255,0.100)),url('images/banner.mp4');
+			display:flex;
+			justify-content:space-evenly;
+			align-items:center;
+		}
+		.s1{
+			float:left;
+			color:black;
+			margin-top:1%;
+			font-family:'dj';
+		}
+		.s2{
+			float:left;
+			color:black;
+			margin-top:1%;
+			font-family:'d';
+			margin-left:10px;
+		}
+		.d2d{
+			height:67px;
+			width:540px;
+			/*border:solid skyblue 2px;*/
+			float:right;
+		}
+		.d2ds1{
+			color:black;
+			float:left;
+			margin-top:3%;
+			font-family:'dj';
+		}
+		.d2ds2{
+			color:black;
+			float:left;
+			margin-left:12%;
+			margin-top:3%;
+			font-family:'d';
+		}
+		.hr{
+			width:30px;
+			border-color:blue;
+		}
+		.select{
+			border:none;
+			float:left;
+			margin-top:20px;
+			outline:none;
+			background-color:white;
+		}
+		.option{
+			border:none;
+			float:left;
+			margin-top:20px;
+			outline:none;
+			background-color:white;
+			color:white;
+		}
+		.p11{
+			text-align:center;
+			font-family:'d';
+			font-size:30px;
+			margin-top:2%;
+			margin-bottom:0px;
+		}
+		.p1{
+			text-align:center;
+			font-family:'d';
+			font-size:30px;
+			margin:1px;
+		}
+		.p2{
+			text-align:center;
+			font-family:'d';
+			font-size:15px;
+			margin:3px;
+		}
+		.learn{
+			height:40px;
+			width:100px;
+			border:solid blue 2px;
+			border-radius:22px;
+			margin-left:47%;
+			margin-top:2%;
+			color:blue;
+			background-color:none;
+		}
+		.more{
+			text-align:center;
+			color:blue;
+		}
+		.circle{
+			height:70px;
+			width:70px;
+/*			border:solid blue 2px;*/
+			border-radius:50%;
+			margin-left:31%;
+			background-image: url("life-time-exchange-2x.png");
+			background-size: cover;
+		}
+		.circled{
+			height:200px;
+			width:200px;
+			/*border:solid blue 2px;*/
+		}
+		.cirspan1{
+			text-align:center;
+			font-family:'dj';
+		}
+		.cirspan{
+			text-align:center;
+			font-family:'d';
+		}
+		.dtoo{
+			height:283px;
+			width:100%;
+			/*border:solid black 2px;*/
+			background-color:#13b4ce;
+		}
+		.dtoosp1{
+			text-align:center;
+			margin-top:0px;
+			font-family:'dj';
+			color:white;
+			font-size:20px;
+			padding-top:3%;
+		}
+		.dtoop1{
+			text-align:center;
+			color:white;
+			font-family:'d';
+		}
+		.butdiv{
+			height:96px;
+			width:100%;
+			/*border:solid black 2px;
+			margin-left:20%;
+			margin-top:43px;*/
+			display:flex;
+			align-items:flex-end;
+			justify-content:center;
+		}
+		.button1{
+			width:280px;
+			height:67px;
+			background-color:white;
+			border:none;
+			outline:none;
+			color:skyblue;
+			font-size:20px;
+		}
+		.button{
+			width:280px;
+			height:67px;
+			background-color:#13b4ce;
+			border:none;
+			outline:none;
+			color:white;
+			font-size:20px;
+		}
+		.d3{
+			height:337px;
+			width:100%;
+			/*border:solid black 2px;*/
+			background-color:white;
+		}
+		.d3div1{
+			height:200px;
+			width:200px;
+			/*border:solid black 2px;*/
+			float:left;
+			margin-left:26%;
+			margin-top:5%;
+		}
+		.d3child{
+			height:200px;
+			width:200px;
+			/*border:solid black 2px;*/
+			border-radius:50%;
+			float:left;
+			margin-left:2%;
+			margin-top:5%;
+		}
+		.d3div2{
+			height:200px;
+			width:200px;
+			/*border:solid black 2px;*/
+			float:left;
+			margin-left:2%;
+			margin-top:5%;
+		}
+		.d3pp{
+			font-family:'dj';
+			text-align:center;
+		}
+		.d3p{
+			color:black;
+			font-family:'d';
+			text-align:center;
+		}
+		.d3hr{
+			width:170px;
+		}
+		.d4{
+			height:414px;
+			width:100%;
+			/*border:solid black 2px;*/
+			background-color:#71b308;
+		}
+		.d4pp{
+			color:#e4e0e0;
+			font-family:'dj';
+			text-align:center;
+			padding-top:3%;
+			margin-top:0px;
+		}
+		.d4p{
+			color:#e4e0e0;
+			font-family:'d';
+			text-align:center;
+		}
+		.d4img{
+			height:246px;
+			width:854px;
+			margin-left:18%;
+			margin-top:2%;
+		}
+		.d5{
+			height:198px;
+			width:100%;
+			/*border:solid black 2px;*/
+			background-color:#e4e0e0;
+		}
+		.d5pp{
+			color:#000000b3;
+			font-family:'dj';
+			font-size:22px;
+			text-align:center;
+			margin-top:0px;
+			padding-top:3%;
+		}
+		.d5p{
+			color:#000000b3;
+			font-family:'d';
+			text-align:center;
+		}
+		.d6{
+			height:700px;
+			width:100%;
+			/*border:solid black 2px;*/
+			background-color:#e4e0e0;
+			display:flex;
+			align-items:center;
+			justify-content:space-around;
+		}
+		.d6dfrow{
+			height:553px;
+			width:220px;
+			/*border:solid green 2px;*/
+		}
+		.d6d1{
+			height:354px;
+			width:220px;
+			/*border:solid black 2px;*/
+			background-color:white;
+		}
+		.d6d1imagediv{
+			height:154px;
+			width:220px;
+			/*border:solid black 2px;*/
+		}
+		.d6d1image{
+			height:154px;
+			width:220px;
+			object-fit:cover;
+		}
+		.d6d1to{
+			height:190px;
+			width:220px;
+			border:solid white 2px;
+			margin-top:31px;
+			background-color:white;
+		}
+		.d6dsrow{
+			height:553px;
+			width:220px;
+			/*border:solid green 2px;*/
+		}
+		.d6ds1{
+			height:192px;
+			width:220px;
+			border:solid white 2px;
+			background-color:white;
+			margin-top:5%;
+		}
+		.d6s2{
+			height:349px;
+			width:220px;
+			margin-top:31px;
+			/*border:solid black 2px;*/
+			background-color:white;
+		}
+		.d6s2imagediv{
+			height:154px;
+			width:220px;
+			/*border:solid black 2px;*/
+		}
+		.d6s2image{
+			height:154px;
+			width:220px;
+			object-fit:cover;
+		}
+		.d6dtrow{
+			height:553px;
+			width:220px;
+			/*border:solid green 2px;*/
+		}
+		.d6t1{
+			height:446px;
+			width:220px;
+			/*border:solid black 2px;*/
+			background-color:white;
+		}
+		.d6t1imagediv{
+			height:200px;
+			width:220px;
+			/*border:solid black 2px;*/
+		}
+		.d6t1image{
+			height:250px;
+			width:220px;
+			object-fit:cover;
+		}
+		.df1p{
+			font-family:'dj';
+			margin-left:8%;
+		}
+		.df1p1{
+			font-family:'d';
+			margin-left:8%;
+		}
+		.button6{
+			height:30px;
+			width:70px;
+			border:solid blue 2px;
+			background-color:white;
+			border-radius:15px;
+			margin-left:7%;
+			font-family:'j';
+			color:blue;
+		}
+		.d7{
+			height:398px;
+			width:100%;
+			/*border:solid black 2px;*/
+			background-color:white;
+			display:flex;
+			align-items:center;
+		}
+		.d71{
+			height:298px;
+			width:331px;
+			/*border:solid black 2px;*/
+			background-color:white;
+			margin-left:8%;
+		}
+		.d72{
+			height:298px;
+			width:231px;
+			/*border:solid black 2px;*/
+			background-color:white;
+		}
+		.d73{
+			height:298px;
+			width:231px;
+			/*border:solid black 2px;*/
+			background-color:white;
+		}
+		.d74{
+			height:298px;
+			width:231px;
+			/*border:solid black 2px;*/
+			background-color:white;
+		}
+		.new1p{
+			font-family:'d';
+			margin-top:2%;
+		}
+		.new1sp{
+			font-family:'d';
+			margin-top:2%;
+			text-decoration:underline;
+		}
+		.ndiv{
+			display:flex;
+			align-items:center;
+		}
+		.netimage{
+			height:25px;
+			width:25px;
+			margin-top:3%;
+			margin-left:1%;
+		}
+		.last{
+			font-family:'j';
+			text-decoration:underline;
+			font-size:30px;
+		}
+		.word{
+			text-align:center;
+			font-family:'d';
+		}
+	
+	</style>
+</head>
+<body>
+	<div class="d1">
+		<div class="d2">
+			<video src="images/banner.mp4"class="video"></video>
+			<div class="d2child">
+				<div class="d2ch1">
+					<span class="s1">Hypothesis</span><span class="s2"> by pixelarity</span>
+					<div class="d2d">
+					<span class="d2ds1">Home<hr class="hr"></span>
+					
+					<span class="d2ds2">Dropdown</span>
+					<select class="select">
+							<option class="option"></option>
+					</select>
+					<span class="d2ds2">Generic</span>
+					<span class="d2ds2">Element</span>
+					
+				</div>
+			</div>
+				<div class="d2ch2">
+					<p class="p11">sed magna cosequat</p>
+					<p class="p1">lorem amet feugiat</p>
+					<p class="p2">ipsum feugiant veroeros lorem dolor
+					</p>
+					<button class="learn">
+						<span>learn more</span>
+					</button>
+				</div>
+				<div class="d2ch3">
+					<div class="circled">
+						<div class="circle"></div>
+						<p class="cirspan1">jaya</p>
+						<p class="cirspan">she is an sentive</p>
+						<p class="cirspan">she like hot iteams</p>
+					</div>
+					<div class="circled">
+						<div class="circle"></div>
+						<p class="cirspan1">divya</p>
+						<p class="cirspan">she is an jolly type</p>
+						<p class="cirspan">she like sweet iteams</p>
+				    </div>
+				    <div class="circled">
+						<div class="circle"></div>
+						<p class="cirspan1">praveen</p>
+						<p class="cirspan">he is like a robot</p>
+						<p class="cirspan">but he is good boy</p>
+					</div>
+				</div>
+			</div>
+		</div>
+		<div class="dtoo">
+			<p class="dtoosp1">mabu crush</p>
+			<p class="dtoop1">he so cute,he so sweet,he so handsome</p>
+			<p class="dtoop1">he so hot,he so cute,he so just</p>
+			<p class="dtoop1">Asewam</p>
+		<div class="butdiv">
+			<input type="button" name="num1" class="button1" value="jasyyyyy">
+			<input type="button" name="num1" class="button" value="daviyyyyy">
+			<input type="button" name="num1" class="button" value="praveeee">
+		</div>
+		</div>
+		<div class="d3">
+			<div class="d3div1">
+				<p class="d3pp">life</p>
+				<p class="d3p">let be say a small story</p>
+				<p class="d3p">hey attension lesson to me</p>
+				<hr class="d3hr">
+				<p class="d3p">life is very short</p>
+				<p class="d3p">always be happy</p>
+			</div>
+			<img src="images/pic01.jpg" class="d3child">
+			<div class="d3div2">
+				<p class="d3pp">story</p>
+				<p class="d3p">problems will come and go</p>
+				<p class="d3p">chill bro.design design</p>
+				<hr class="d3hr">
+				<p class="d3p">so plese coll your mind</p>
+				<p class="d3p">thas is so safe for you</p>
+			</div>
+		</div>
+		<div class="d4">
+			<p class="d4pp">This day experience</p>
+			<p class="d4p">today morning start with small fear because today's my collage</p>
+			<p class="d4p">counsiling but now i feel better</p>
+			<img src="images/pic04.jpg" class="d4img">
+		</div>
+		<div class="d5">
+			<p class="d5pp">The story will be continue</p>
+			<p class="d5p">because i got sheet from the collage but now i feel like headache</p>
+			<p class="d5p">but ok i will manage it</p>
+		</div>
+		<div class="d6">
+			<div class="d6dfrow">
+			 <div class="d6d1">
+				<div class="d6d1imagediv">
+					<img src="images/pic05.jpg"  class="d6d1image">
+					<p class="df1p">i feel realace</p>
+					<p class="df1p1">because my mind</p>
+					<p class="df1p1">so clear about</p>
+					<p class="df1p1">my collage</p>
+					<button class="button6">more</button>
+				</div>
+			</div>
+				<div class="d6d1to">
+					<p class="df1p">about divya</p>
+					<p class="df1p1">she is an jolly</p>
+					<p class="df1p1">type she is my</p>
+					<p class="df1p1">close friend</p>
+					<button class="button6">more</button>
+				</div>
+			</div>
+			<div class="d6dsrow">
+				<div class="d6ds1">
+					<p class="df1p">i feel realace</p>
+					<p class="df1p1">because my mind</p>
+					<p class="df1p1">so clear about</p>
+					<p class="df1p1">my collage</p>
+					<button class="button6">more</button>
+				</div>
+			 <div class="d6s2">
+				<div class="d6s2imagediv">
+					<img src="images/pic06.jpg"  class="d6s2image">
+					<p class="df1p">i feel realace</p>
+					<p class="df1p1">because my mind</p>
+					<p class="df1p1">so clear about</p>
+					<p class="df1p1">my collage</p>
+					<button class="button6">more</button>
+				</div>
+			</div>
+			</div>
+			<div class="d6dtrow">
+			 <div class="d6t1">
+				<div class="d6t1imagediv">
+					<img src="images/pic07.jpg"  class="d6t1image">
+					<p class="df1p">i feel realace</p>
+					<p class="df1p1">because my mind</p>
+					<p class="df1p1">so clear about</p>
+					<p class="df1p1">my collage</p>
+					<button class="button6">more</button>
+				</div>
+			</div>	
+		</div>
+	
+	</div>
+		<div class="d7">
+			<div class="d71">
+				<p class="new1p">lecus.donec consectetuer liguila vulputate sem</p>
+				<p class="new1p">tristique cursus sed magna graida non.</p>
+				<img src="images/fb.png" class="netimage">
+				<img src="images/twit.png" class="netimage">
+				<img src="images/in.png" class="netimage">
+			</div>
+			<div class="d72">
+				<ul type="bullet">
+					<li  class="new1sp">quis lectus donec</li>
+					<br>
+					<li class="new1sp">Magn ligula</li>
+					<br>
+					<li class="new1sp">sed etiam tristique</li>
+					<br>
+					<li class="new1sp">Cursus magna</li>
+					<br>
+					<li class="new1sp">Gravida dolore</li>
+					<br>
+			</div>
+			<div class="d73">
+			  <ul type="bullet">
+				<li class="new1sp">Vulputate tristique</li>
+				<br>
+				<li class="new1sp">Ultrices nulla</li>
+				<br>
+				<li class="new1sp">Cursus sed magna</li>
+				<br>
+				<li class="new1sp">sed lectus donec</li>
+			  </ul>
+			</div>
+			<div class="d74">
+				<p class="new1p">gravida non lorem ipsum dolor sit amet</p>
+				<p class="last">(000)000-0000</p>
+			</div>
+
+		</div>
+		<p class="word">DJ finish</p>
+		<ol>
+			<li>dncdcbm</li>
+		</ol>
+	</div>
+
+</body>
+</html>
