@@ -1,0 +1,310 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<title>2dice</title>
+	<style type="text/css">
+		body{
+			margin: 0;
+			background-image: linear-gradient(rgba(62, 20, 20, 0.4), rgba(62, 20, 20, 0.4)),url("city_filter.jpg");
+		}
+		#maind{
+			/*height: 100%;
+		    width: 100%;*/
+		   /* border: solid black;*/
+		    display: flex;
+		    align-items: center;
+		    flex-wrap: wrap;
+		    justify-content: center;
+		}
+		#d1{
+			height: 603px;
+		    width: 40%;
+		    /*border: solid red;*/
+		    background-color: #F6DBE6;
+		    float: left;
+		    display: flex;
+		    align-items: flex-start;
+		    align-content: center;
+		    flex-direction: column;
+		    flex-wrap: wrap;
+		    justify-content: space-evenly;
+		}
+		/*.d1:active{
+			background-color:#F6DBE6;;
+			color:white;
+			transition-duration:0.1s;
+		}*/
+		#d2{
+			height: 603px;
+		    width: 40%;
+		    /*border: solid red;*/
+		    background-color: white;
+		    float: left;
+		    display: flex;
+		    align-items: flex-start;
+		    align-content: center;
+		    flex-direction: column;
+		    flex-wrap: wrap;
+		    justify-content: space-evenly;
+		}
+		#db{
+			height: 603px;
+			display: flex;
+		   /* border: solid;*/
+		    flex-direction: column;
+		    float: left;
+		    position: absolute;
+		    align-items: center;
+		    justify-content: space-evenly;
+		}
+		.curs{
+			border: solid #EB4D4D;
+    		background-color: #EB4D4D;
+    		text-align: center;
+    		width: 20%;
+    		margin-left: 32px;
+		}
+		.player{
+			color:#555555;
+			font-size: 40px;
+		}
+		#play1{
+			font-size: 80px;
+			color: #EB4D4D;
+			font-weight: 100;
+		}
+		#play2{
+			font-size: 80px;
+			color: #EB4D4D;
+			font-weight: 100;
+		}
+		#curr1{
+			color:#fff
+		}
+		#curr2{
+			color:#fff
+		}
+		.crrLable{
+			color: #222;
+		}
+		.pldiv{
+			text-align: center;
+		}
+		button{
+			border: none;
+		    background: none;
+		    font-family: Lato;
+		    font-size: 20px;
+		    text-transform: uppercase;
+		    font-weight: 300;
+		    color: #555;
+		}
+		img{
+			height: 100px;
+    		/*width: 100px;*/
+		}
+		input{
+			height: 40px;
+		    width: 150px;
+		    text-align: center;
+		    font-size: 17px;
+		}
+	</style>
+</head>
+<body>
+
+	<div id="maind">
+		
+		<div id="d1">
+			<div class="pldiv">
+				<p class="player">PLAYER 1</p> 
+				<p id="play1">0</p>
+			</div>
+			<div class="curs">
+				<p class="crrLable">current</p>
+				<p  id="curr1">0</p>
+			</div>
+         </div>
+       <div id="db">
+         <img id="dice1">
+     	 <img id="dice2">
+         <button onclick="roll()" class="roll"  style="border: solid 1px;">Roll dice</button>
+	     <button onclick="hold()" style="border: solid 1px;">Hold</button>
+	     <input type="number" name="finalScore" id="final" placeholder="FINAL SCORE">
+	     <button onclick="restart()" style="border: solid 1px;">restart</button>
+	 </div>
+		<div id="d2">
+			<div class="pldiv">
+				<p class="player">PLAYER 2</p>
+				<p id="play2">0</p>
+			</div>
+			<div  class="curs">
+				<p class="crrLable">current</p>
+				<p id="curr2">0</p>
+			</div>
+		</div>
+	<div style="clear: both;">
+	
+	
+	</div>
+	</div>
+
+<script type="text/javascript">
+
+
+
+	//roll dice
+
+
+		let sum;
+		let sum2;
+		let add;
+		let player1=true;
+		function roll(){
+			let imgArr1=["1.png","2.png","3.png","4.png","5.png","6.png"];
+			let random1=Math.floor(Math.random()*6);
+			let imgValue1=document.getElementById('dice1').src=imgArr1[random1];
+            
+
+
+			let imgArr2=["1.png","2.png","3.png","4.png","5.png","6.png"];
+			let random2=Math.floor(Math.random()*6);
+			let imgValue2=document.getElementById('dice2').src=imgArr2[random2];
+			// let imgobj={"1.png":1,"2.png":2,"3.png":3,"4.png":4,"5.png":5,"6.png":6}
+
+			let current1=document.getElementById("curr1");
+			sum=current1.innerText;
+			sum=Number(sum);            
+            // let value=current1.innerText=add+sum;
+            add=0;
+
+            let current2=document.getElementById("curr2");
+			sum2=current2.innerText;
+			sum2=Number(sum2);
+			// let value2=current2.innerText=add+sum2;
+
+            if(player1==true){
+            	// alert("play1")
+        
+            	document.getElementById("d1").style.backgroundColor="#F6DBE6";
+				if(random1+1==1||random1+1==3||random2+1==1||random2+1==3){
+					// document.getElementById("play1").innerText=value;
+					current1.innerText=0;
+					document.getElementById("d1").style.backgroundColor="white";
+					document.getElementById("d2").style.backgroundColor="#F6DBE6";
+			
+	                player1=false;
+				}
+				else{
+					add=(random1+1)+(random2+1);    
+				    current1.innerText=add+sum;
+				}
+		  }
+		  else{
+		  	// alert("play2");
+		  		 
+		  		document.getElementById("d2").style.backgroundColor="#F6DBE6";
+		  	if(random1+1==1||random1+1==3||random2+1==1||random2+1==3){
+					current2.innerText=0;
+					document.getElementById("d2").style.backgroundColor="white";
+					document.getElementById("d1").style.backgroundColor="#F6DBE6";
+					// document.getElementById("play2").innerText=value2;
+					player1=true;
+	                
+				}
+				else{
+					 add=(random1+1)+(random2+1);      
+				   current2.innerText=add+sum2;
+				}
+		  	}
+		  	final();
+
+		}
+
+
+		//hold dice
+
+
+		function hold() {
+			let p1value;
+			let p2value;
+
+      	   if(player1==true){
+				let hp1=document.getElementById("play1");
+				hp1.innerText=Number(curr1.innerText)+Number(hp1.innerText);
+				p1value=hp1.innerText;
+				// hp1+=sum;
+				curr1.innerText=0;
+				document.getElementById("d2").style.backgroundColor="#F6DBE6";
+				document.getElementById("d1").style.backgroundColor="white";
+				player1=false;
+				// console.log("aa"+add);
+			  	//console.log("hp1"+hp1.innerText);
+	       }
+
+
+	       else if (player1==false){
+				let hp2=document.getElementById("play2");
+				hp2.innerText=Number(curr2.innerText)+Number(hp2.innerText);
+				p2value=hp2.innerText;
+				curr2.innerText=0;
+				document.getElementById("d1").style.backgroundColor="#F6DBE6";
+				document.getElementById("d2").style.backgroundColor="white";
+				player1=true;
+		   }
+		   final();
+		
+		}
+
+
+		//final score
+
+		let win1;
+		let win2;
+		function final(){
+			let finalscore=document.getElementById("final").value;
+			console.log("final",finalscore);
+			let score1=Number(document.getElementById("play1").innerText);
+			let score2=Number(document.getElementById("play2").innerText);
+			console.log("score1",score1);
+			console.log("score",score2);
+
+		if (0<finalscore) {
+			if(score1>=finalscore){
+				document.getElementById("d1").style.backgroundImage="url('winner.jpg')";
+				win1=true;
+			}
+			else if(score2>=finalscore){
+				document.getElementById("d2").style.backgroundImage="url('winner.jpg')"
+				win2=true;
+			}
+		}
+	}
+
+	//restart
+
+	function restart(){
+		document.getElementById("d1").style.backgroundImage="none";
+		document.getElementById("d2").style.backgroundImage="none";
+		document.getElementById("play1").innerText="0";
+		document.getElementById("play2").innerText="0";
+		document.getElementById("final").value="none";
+
+		
+
+		if (win1==true){
+			hold();
+		}
+		else if(win2==true){
+			player1=false;
+			hold();
+		}
+	}
+
+
+
+	</script>
+</body>
+</html>

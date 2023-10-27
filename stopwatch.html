@@ -1,0 +1,139 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<title></title>
+	<style type="text/css">
+		@font-face{
+			font-family:"dj";
+			src:url("fonts/S6u9w4BMUTPHh6UVSwiPGQ.woff2");
+		}
+		@font-face{
+			font-family:"robo";
+			src:url("fonts/Roboto-ThinItalic.woff2");
+		}
+		@font-face{
+			font-family:"d";
+			src:url("fonts/S6u9w4BMUTPHh7USSwiPGQ.woff2");
+		}
+		@font-face{
+			font-family:"j";
+			src:url("fonts/S6uyw4BMUTPHjx4wXg.woff2");
+		}
+		#div1{
+			height: 400px;
+			width:99%;
+			border: solid 5px;
+			background-color:#ffbd03;
+			display: flex;
+			flex-direction: column;
+		    align-items: center;
+		    justify-content: space-around;
+		    
+		}
+		span{
+			font-size: 44px;
+/*			text-align: center;*/
+			margin: auto;
+			font-family: d;
+		}
+		button{
+			height: 50px;
+			width: 60px;
+			background-color:#ffbd03;
+			font-size: 20px;
+			font-family: d;
+			border: 1px solid white;
+		}
+		#three{
+		width: 250px;
+    display: flex;
+    justify-content: space-around;
+		}
+		button:active{
+			background-color: gray;
+		}
+	</style>
+</head>
+<body>
+	<div id="div1">
+		<h1 style="text-align: center;font-family: j;">STOP WATCH</h1>
+		<!-- <h2>DIVYA JAVASCRIPR STOPWATH</h2> -->
+		<div> <span id="min">00</span> <span>:</span> <span id="sec">00</span></div>
+		<div id="three"> <button onclick="start()"> start</button> 
+			  <button onclick="stop()">stop</button> 
+			  <button onclick="reset()">reset</button>
+	    </div>
+	</div>
+
+    
+
+    <script type="text/javascript">
+    	let a;
+    	let count=0;
+    	let seconds=0;
+    	let minutes=0;
+    	// let min=document.getElementById('sec').innerText;
+    	function start(){
+
+    		count++;
+    		if(count<2){
+    		 a=setInterval(()=>{
+
+    		 	seconds++;
+    		 	print();
+    		 },10);
+    		}
+            console.log(seconds);
+    		// for (var i =1; i <=60; i++) {
+
+    		// 	setInterval(function {
+    		// 		document.getElementById('sec').innerText=i;
+    		// 	}(1000));
+    			// if(i==60){
+    			// 	i=0;
+    			// }
+    			
+    		}
+    	
+    	 function print(){
+    	 	 if(seconds<=9){
+               seconds="0"+seconds
+    	 	}
+    	 	else{
+                 seconds
+    	 	}
+
+    	 	document.getElementById('sec').innerText=seconds;
+    	 	if(seconds==100){
+    	 		seconds=0;
+                 minutes++;
+    	 		 
+
+    	 		
+    	 		if(minutes<=9){
+                   minutes="0"+minutes;
+                   
+    	 		}
+	    	 	else{
+	                 minutes;
+	    	 	}
+	    	 	document.getElementById('min').innerText=minutes;
+    	 	}
+    	 }
+
+    	 function stop(){
+    	 	clearInterval(a);
+    	 	count=0;
+    	 }
+    	 function reset(){
+    	 	document.getElementById('sec').innerText="00";
+    	 	document.getElementById('min').innerText="00";
+    	 	clearInterval(a);
+    	 	seconds=0
+    	 	count=0;
+    	 }
+    </script>
+</body>
+</html>
